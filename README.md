@@ -76,6 +76,7 @@
 git clone https://github.com/ВАШ_USERNAME/my-python-app.git
 
 cd my-python-app ```
+
 2. Создание виртуального окружения
 
 bash
