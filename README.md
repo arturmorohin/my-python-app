@@ -135,7 +135,7 @@ bash
 
 cp .env.example .env
 
-# Отредактируйте .env файл
+### Отредактируйте .env файл
 
 nano .env
 
@@ -279,18 +279,6 @@ nano .env
 
  SQLAlchemy==2.0.19
 
-### Веб-фреймворк (если используется)
-
- fastapi==0.104.1
-
- uvicorn[standard]==0.24.0
-
-#### или
-
- flask==3.0.0
-
- flask-sqlalchemy==3.1.1
-  
 
 ### Утилиты
 
