@@ -65,11 +65,12 @@
 
 ### 1. Клонирование репозитория
 
- bash
+ ```bash
 
  git clone https://github.com/ВАШ_USERNAME/my-python-app.git
 
- cd my-python-app 
+ cd my-python-app
+``` 
 
 ### 2. Создание виртуального окружения
 
@@ -125,13 +126,13 @@
 
 ### 5. Настройка переменных окружения
 
-bash
+ bash
 
-cp .env.example .env
+ cp .env.example .env
 
 ### Отредактируйте .env файл
 
-nano .env
+ nano .env
 
 ### 6. Инициализация базы данных
 
@@ -139,11 +140,11 @@ nano .env
 
  python src/database/init_db.py
 
-### или
+ или
 
  alembic upgrade head  # если используете Alembic
 
- Конфигурация
+### Конфигурация
 
  Файл .env
 
@@ -181,7 +182,7 @@ nano .env
 
  API_PORT=8000
 
- Конфигурационный файл
+## Конфигурация
 
  python
 
