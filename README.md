@@ -111,13 +111,13 @@
 
  
 
-# Создание базы данных и пользователя
+### Создание базы данных и пользователя
 
  sudo mysql -u root -p
 
  
 
-# В MySQL CLI:
+### В MySQL CLI:
 
  CREATE DATABASE myapp_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
@@ -129,7 +129,7 @@
 
  EXIT;
 
-## 5. Настройка переменных окружения
+### 5. Настройка переменных окружения
 
 bash
 
@@ -139,13 +139,13 @@ cp .env.example .env
 
 nano .env
 
-## 6. Инициализация базы данных
+### 6. Инициализация базы данных
 
  bash
 
  python src/database/init_db.py
 
-# или
+### или
 
  alembic upgrade head  # если используете Alembic
 
@@ -155,7 +155,7 @@ nano .env
 
  env
 
-# Database
+### Database
 
  DB_HOST=localhost
 
@@ -171,7 +171,7 @@ nano .env
 
  
 
-# App
+### App
 
  DEBUG=False
 
@@ -181,7 +181,7 @@ nano .env
 
  
 
-# API
+### API
 
  API_HOST=0.0.0.0
 
@@ -191,7 +191,7 @@ nano .env
 
  python
 
-# config/database.py
+### config/database.py
 
  import os
 
@@ -271,7 +271,7 @@ nano .env
  └── README.md
 
 
-# Основные зависимости
+### Основные зависимости
 
  mysql-connector-python==8.0.33
 
@@ -279,20 +279,20 @@ nano .env
 
  SQLAlchemy==2.0.19
 
-# Веб-фреймворк (если используется)
+### Веб-фреймворк (если используется)
 
  fastapi==0.104.1
 
  uvicorn[standard]==0.24.0
 
-# или
+#### или
 
  flask==3.0.0
 
  flask-sqlalchemy==3.1.1
   
 
-# Утилиты
+### Утилиты
 
  python-dateutil==2.8.2
 
@@ -302,7 +302,7 @@ nano .env
 
  
 
-# Разработка и тестирование
+## Разработка и тестирование
 
  pytest==7.4.3
 
