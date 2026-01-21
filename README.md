@@ -61,7 +61,7 @@
 
 ### Зависимости Python
 
-Смотрите `requirements.txt`
+ Смотрите `requirements.txt`
 
  
 
@@ -71,43 +71,43 @@
 
 ### 1. Клонирование репозитория
 
-bash
+ bash
 
-git clone https://github.com/ВАШ_USERNAME/my-python-app.git
+ git clone https://github.com/ВАШ_USERNAME/my-python-app.git
 
-cd my-python-app 
+ cd my-python-app 
 
-2. Создание виртуального окружения
+### 2. Создание виртуального окружения
 
-bash
+ bash
 
-python3 -m venv venv
+ python3 -m venv venv
 
-source venv/bin/activate  # Linux/Mac
+ source venv/bin/activate  # Linux/Mac
 
-# или
+### или
 
-venv\Scripts\activate     # Windows
+ venv\Scripts\activate     # Windows
 
-3. Установка зависимостей
+### 3. Установка зависимостей
 
-bash
+ bash
 
-pip install --upgrade pip
+ pip install --upgrade pip
 
-pip install -r requirements.txt
+ pip install -r requirements.txt
 
-4. Настройка MySQL
+### 4. Настройка MySQL
 
-bash
+ bash
 
-sudo apt update
+ sudo apt update
 
-sudo apt install mysql-server mysql-client -y
+ sudo apt install mysql-server mysql-client -y
 
-sudo systemctl start mysql
+ sudo systemctl start mysql
 
-sudo systemctl enable mysql
+ sudo systemctl enable mysql
 
  
 
@@ -305,24 +305,24 @@ flask-sqlalchemy==3.1.1
 
 # Утилиты
 
-python-dateutil==2.8.2
+ python-dateutil==2.8.2
 
-pytz==2023.3
-
-loguru==0.7.2
+ pytz==2023.3
+ 
+ loguru==0.7.2
 
  
 
- # Разработка и тестирование
+# Разработка и тестирование
 
-pytest==7.4.3
+ pytest==7.4.3
 
-pytest-cov==4.1.0
+ pytest-cov==4.1.0
 
-black==23.11.0
+ black==23.11.0
 
-flake8==6.1.0
+ flake8==6.1.0
 
-isort==5.12.0
+ isort==5.12.0
 
-mypy==1.7.0
+ mypy==1.7.0
