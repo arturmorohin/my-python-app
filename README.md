@@ -113,23 +113,23 @@
 
 # Создание базы данных и пользователя
 
-sudo mysql -u root -p
+ sudo mysql -u root -p
 
  
 
 # В MySQL CLI:
 
-CREATE DATABASE myapp_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+ CREATE DATABASE myapp_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-CREATE USER 'myapp_user'@'localhost' IDENTIFIED BY 'secure_password';
+ CREATE USER 'myapp_user'@'localhost' IDENTIFIED BY 'secure_password';
 
-GRANT ALL PRIVILEGES ON myapp_db.* TO 'myapp_user'@'localhost';
+ GRANT ALL PRIVILEGES ON myapp_db.* TO 'myapp_user'@'localhost';
 
-FLUSH PRIVILEGES;
+ FLUSH PRIVILEGES;
 
-EXIT;
+ EXIT;
 
-5. Настройка переменных окружения
+## 5. Настройка переменных окружения
 
 bash
 
@@ -139,71 +139,68 @@ cp .env.example .env
 
 nano .env
 
-6. Инициализация базы данных
+## 6. Инициализация базы данных
 
-bash
+ bash
 
-python src/database/init_db.py
+ python src/database/init_db.py
 
 # или
 
-alembic upgrade head  # если используете Alembic
+ alembic upgrade head  # если используете Alembic
 
-Конфигурация
+ Конфигурация
 
-Файл .env
+ Файл .env
 
-env
+ env
 
 # Database
 
-DB_HOST=localhost
+ DB_HOST=localhost
 
-DB_PORT=3306
+ DB_PORT=3306
 
-DB_NAME=myapp_db
+ DB_NAME=myapp_db
 
-DB_USER=myapp_user
+ DB_USER=myapp_user
 
-DB_PASSWORD=secure_password
+ DB_PASSWORD=secure_password
 
-DB_CHARSET=utf8mb4
+ DB_CHARSET=utf8mb4
 
  
 
 # App
 
-DEBUG=False
+ DEBUG=False
 
-SECRET_KEY=your-secret-key-here
+ SECRET_KEY=your-secret-key-here
 
-LOG_LEVEL=INFO
+ LOG_LEVEL=INFO
 
  
 
 # API
 
-API_HOST=0.0.0.0
+ API_HOST=0.0.0.0
 
-API_PORT=8000
+ API_PORT=8000
 
-Конфигурационный файл
+ Конфигурационный файл
 
-python
+ python
 
 # config/database.py
 
-import os
+ import os
 
-from dotenv import load_dotenv
+ from dotenv import load_dotenv  
 
- 
-
-load_dotenv()
+ load_dotenv()
 
  
-
-DATABASE_CONFIG = {
+ DATABASE_CONFIG = {
 
     'host': os.getenv('DB_HOST', 'localhost'),
 
@@ -217,91 +214,83 @@ DATABASE_CONFIG = {
 
     'charset': os.getenv('DB_CHARSET', 'utf8mb4')
 
-}
+ }
 
  Использование
 
-Запуск приложения
+ Запуск приложения
 
-bash
+ bash
 
-python src/main.py
+ python src/main.py
 
-Структура проекта
+ Структура проекта
 
-text
+ text
 
-my-python-app/
+ my-python-app/
 
-├── src/                    # Исходный код
+ ├── src/                    # Исходный код
 
-│   ├── __init__.py
+ │   ├── __init__.py
 
-│   ├── main.py            # Точка входа
+ │   ├── main.py            # Точка входа
 
-│   ├── models/            # Модели данных
+ │   ├── models/            # Модели данных
 
-│   ├── database/          # Работа с БД
+ │   ├── database/          # Работа с БД
 
-│   │   ├── __init__.py
+ │   │   ├── __init__.py
 
-│   │   ├── connection.py  # Подключение к MySQL
+ │   │   ├── connection.py  # Подключение к MySQL
 
-│   │   └── queries.py     # SQL запросы
+ │   │   └── queries.py     # SQL запросы
 
-│   ├── api/               # API endpoints
+ │   ├── api/               # API endpoints
 
-│   └── utils/             # Вспомогательные функции
+ │   └── utils/             # Вспомогательные функции
 
-├── config/                # Конфигурация
+ ├── config/                # Конфигурация
 
-│   ├── __init__.py
+ │   ├── __init__.py
 
-│   └── database.py
+ │   └── database.py
 
-├── database/
+ ├── database/
 
-│   └── migrations/        # Миграции БД
+ │   └── migrations/        # Миграции БД
 
-├── docs/                  # Документация
+ ├── docs/                  # Документация
 
-├── requirements.txt       # Зависимости Python
+ ├── requirements.txt       # Зависимости Python
 
-├── .env.example          # Шаблон переменных окружения
+ ├── .env.example          # Шаблон переменных окружения
 
-├── .gitignore
+ ├── .gitignore
 
-└── README.md
+ └── README.md
 
-## 8. requirements.txt для Python/MySQL проекта
-
- 
-
-txt
 
 # Основные зависимости
 
-mysql-connector-python==8.0.33
+ mysql-connector-python==8.0.33
 
-python-dotenv==1.0.0
+ python-dotenv==1.0.0
 
-SQLAlchemy==2.0.19
-
- 
+ SQLAlchemy==2.0.19
 
 # Веб-фреймворк (если используется)
 
-fastapi==0.104.1
+ fastapi==0.104.1
 
-uvicorn[standard]==0.24.0
+ uvicorn[standard]==0.24.0
 
 # или
 
-flask==3.0.0
+ flask==3.0.0
 
-flask-sqlalchemy==3.1.1
-
- 
+ flask-sqlalchemy==3.1.1
+  
 
 # Утилиты
 
