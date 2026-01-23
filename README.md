@@ -268,11 +268,13 @@
 
 ### Основные зависимости
 
- mysql-connector-python==8.0.33
+ PySide6>=6.5
+ 
+ mysql-connector-python>=8.0
 
- python-dotenv==1.0.0
+ reportlab>=4.0
 
- SQLAlchemy==2.0.19
+ matplotlib>=3.5
 
 
 ### Утилиты
@@ -282,7 +284,6 @@
  pytz==2023.3
  
  loguru==0.7.2
-
  
 
 # Тестирование и разработка
@@ -298,3 +299,11 @@
  isort==5.12.0
 
  mypy==1.7.0
+
+ PySide6>=6.5
+ 
+ mysql-connector-python>=8.0
+ 
+ reportlab>=4.0
+ 
+ matplotlib>=3.5
